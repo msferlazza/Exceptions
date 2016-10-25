@@ -43,19 +43,21 @@ public class PingPong {
   }
 
   /** Hauptprogramm. */
-  public static void main(String[] args) {
+  public static void main(String[] args) throws PingPongException {
     try {
       Hauptprogramm();
     }
+
     catch (PingException ex) {
       System.out.println("PingException aufgetreten");
     }
     catch (PongException ex) {
       System.out.println("PongException aufgetreten");
     }
-    catch (PingPongException ex) {
-      System.out.println("PingPongException aufgetreten");
+    finally {
+      System.out.println("Verlasse den kritischen Bereich");
     }
+
   }
 
 }
